@@ -1,0 +1,33 @@
+{
+  "name": "chest",
+  "version": "1.0.0",
+  "description": "An Inventory tracker for stores",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucidreline/chest.git"
+  },
+  "author": "Lucidreline",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucidreline/chest/issues"
+  },
+  "homepage": "https://github.com/Lucidreline/chest#readme",
+  "dependencies": {
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-sanitizer": "^1.0.5",
+    "helmet": "^3.23.3",
+    "mongoose": "^5.9.20",
+    "morgan": "^1.10.0",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "nodemon": "^2.0.4"
+  }
+}
