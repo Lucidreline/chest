@@ -12,4 +12,10 @@ router.get('/', async (req, res) => {
   res.json({ items: await Item.find({}) });
 });
 
+router.post('/', async (req, res) => {
+  console.log(req.body);
+  res.send(req.body);
+  // res.json({ addedItem: await Item.create(req.body) });
+});
+
 module.exports = router;
