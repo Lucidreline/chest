@@ -8,8 +8,7 @@ const app = express();
 
 connectDB();
 
-app.get('/', (req, res) => {
-  res.send('hi');
-});
+// routes
+app.use('/api/items', require('./routes/items'));
 
 app.listen(config.get('port'), () => console.log(`server online on port ${config.get('port')}`));
