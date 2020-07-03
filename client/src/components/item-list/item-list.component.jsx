@@ -8,22 +8,44 @@ class ItemList extends React.Component {
     super();
     this.state = {
       searchField: '',
+      items: [],
     };
   }
+
+  componentDidMount = () => {
+    fetch('/api/items')
+      .then((res) => res.json())
+      .then((jsonRes) => {
+        if (jsonRes.successful) {
+          this.setState({ items: jsonRes.items });
+        }
+      });
+  };
 
   handleInputChange = (e) => {
     const searchField = e.target.value;
     this.setState({ searchField });
   };
 
+  filterItems = (item) => {
+    let namematch = item.name
+      .toLowerCase()
+      .includes(this.state.searchField.toLowerCase());
+
+    if (namematch) return true;
+  };
+
   render() {
+    const filteredItems = this.state.items.filter(this.filterItems);
     return (
       <div>
-        <ItemCard />
         <FilterSearchBox
           placeholder='Item Search'
           handleChange={this.handleInputChange}
         />
+        {filteredItems.map((item) => (
+          <ItemCard key={item._id} item={item} />
+        ))}
       </div>
     );
   }

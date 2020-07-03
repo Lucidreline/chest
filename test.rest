@@ -2,7 +2,7 @@ POST http://localhost:8090/api/items HTTP/1.1
 content-type: application/json
 
 {
-    "name": "<script>console.log('hack')</script>sample numero 3 ",
-    "price": 13,
+    "name": "live test",
+    "price": 5,
     "imageUrl": "image!"
 }
